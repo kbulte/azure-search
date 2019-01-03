@@ -3,5 +3,6 @@
     "description" : "A data source for ProductInfo view",
     "type" : "azuresql",
     "credentials" : { "connectionString" : "" },
-    "container" : { "name" : "[Production].[vProductInfo]" }
+    "container" : { "name" : "[Production].[vProductInfo]" },
+    "dataChangeDetectionPolicy" : { "@odata.type" : "#Microsoft.Azure.Search.HighWaterMarkChangeDetectionPolicy", "highWaterMarkColumnName" : "_ts" }
 }
