@@ -22,11 +22,11 @@
   
  $definition = Get-Definition $definitionName
 
- $credentials = @{ "connectionString" = $connectionString }
- $definition.credentials = $credentials
+ #$credentials = @{ "connectionString" = $connectionString }
+ #$definition.credentials = $credentials
 
  $dataSource = Get-DataSource $definition.name
- if ($dataSource -ne $null)
+ if ($null -ne $dataSource)
  {
     Delete-DataSource $definition.name
  }
