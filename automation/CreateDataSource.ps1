@@ -31,4 +31,4 @@
     Delete-DataSource $definition.name
  }
 
- Create-DataSource $definition
+ New-DataSource $definition

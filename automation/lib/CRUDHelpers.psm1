@@ -45,7 +45,7 @@ function Show-Entities
 }
 
 Export-ModuleMember -Function Get-Entity
-Export-ModuleMember -Function Create-Entity
+Export-ModuleMember -Function New-Entity
 Export-ModuleMember -Function Update-Entity
-Export-ModuleMember -Function Delete-Entity
-Export-ModuleMember -Function List-Entities
+Export-ModuleMember -Function Remove-Entity
+Export-ModuleMember -Function Show-Entities
