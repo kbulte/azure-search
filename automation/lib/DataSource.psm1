@@ -13,14 +13,15 @@ function Get-DataSource
     return Get-Entity $baseUri $dataSourceName
 }
 
-function Create-DataSource
+function New-DataSource
 {
     param ($dataSourceDefinition)
 
     $name = $dataSourceDefinition.name
-    Write-Host "Creating data source $name..."
+    Write-Host "Creating data source bla bla $name..."
 
     $baseUri = Get-BaseUri
+    Write-Host "baseUri retrieved $baseUri..."
     return Create-Entity $baseUri $dataSourceDefinition
 }
 
@@ -34,7 +35,7 @@ function Update-DataSource
     return Update-Entity $baseUri $dataSourceName $dataSourceDefinition
 }
 
-function Delete-DataSource
+function Remove-DataSource
 {
     param ($dataSourceName)
 
@@ -44,7 +45,7 @@ function Delete-DataSource
     return Delete-Entity $baseUri $dataSourceName
 }
 
-function List-DataSources
+function Show-DataSources
 {
     $baseUri = Get-BaseUri
     return List-Entities $baseUri
