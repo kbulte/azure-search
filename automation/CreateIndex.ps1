@@ -20,7 +20,7 @@
  $definition = Get-Definition $definitionName
 
  $index = Get-Index $definition.name
- if ($index -ne $null)
+ if ($null -ne $index)
  {
     Delete-Index $definition.name
  }

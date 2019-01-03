@@ -14,7 +14,7 @@ function Get-Entity
     return Get-Safe $uri
 }
 
-function Create-Entity
+function New-Entity
 {
     param ($baseUri, $entityDefinition)
 
@@ -29,7 +29,7 @@ function Update-Entity
     return Put $uri $entityDefinition
 }
 
-function Delete-Entity
+function Remove-Entity
 {
     param ($baseUri, $entityName)
     
@@ -37,7 +37,7 @@ function Delete-Entity
     return Delete $uri
 }
 
-function List-Entities
+function Show-Entities
 {
     param ($baseUri)
 
