@@ -22,8 +22,8 @@
   
  $definition = Get-Definition $definitionName
 
- #$credentials = @{ "connectionString" = $connectionString }
- #$definition.credentials = $credentials
+ $credentials = @{ "connectionString" = $connectionString }
+ $definition.credentials = $credentials
 
  $dataSource = Get-DataSource $definition.name
  if ($null -ne $dataSource)

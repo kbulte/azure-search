@@ -5,7 +5,7 @@ $ErrorActionPreference = "Stop"
 $apiVersion = '2017-11-11'
 $contentType = 'application/json; charset=utf-8'
 
-function Append-ServiceVersion
+function Add-ServiceVersion
 {
     param ($uri)
     return $uri + "?api-version=$apiVersion"
@@ -53,7 +53,7 @@ function Post
     $headers = Get-DefaultHeaders
 
     $result = $null
-    if ($body -ne $null)
+    if ($null -ne $body)
     {
         $json = ConvertTo-Json $body -Depth 100
         $postData = [System.Text.Encoding]::UTF8.GetBytes($json)

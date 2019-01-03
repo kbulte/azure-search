@@ -15,9 +15,10 @@
  Set-Credentials $serviceName $serviceKey
 
  $dataSource = Get-DataSource $dataSourceName
- if ($dataSource -ne $null)
+ if ($null -ne $dataSource)
  {
-    Delete-DataSource $dataSourceName
+    Remove-DataSource $dataSourceName
+    Write-Host "Data source $dataSourceName has been deleted"
  }
  else
  {
