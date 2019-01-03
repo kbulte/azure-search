@@ -20,9 +20,10 @@
  $definition = Get-Definition $definitionName
 
  $indexer = Get-Indexer $definition.name
- if ($indexer -ne $null)
+ if ($null -ne $indexer)
  {
-    Delete-Indexer $definition.name
+    Remove-Indexer $definition.name
  }
 
- Create-Indexer $definition
+ New-Indexer $definition
+ Show-Indexers

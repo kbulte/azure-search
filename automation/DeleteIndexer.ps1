@@ -15,9 +15,10 @@
  Set-Credentials $serviceName $serviceKey
 
  $indexer = Get-Indexer $indexerName
- if ($indexer -ne $null)
+ if ($null -ne $indexer)
  {
-    Delete-Indexer $indexerName
+    Remove-Indexer $indexerName
+    Write-Host "Indexer $indexerName has been deleted"
  }
  else
  {

@@ -20,7 +20,7 @@ function Get
 {
     param ($uri)
         
-    $finalUri = Append-ServiceVersion($uri)
+    $finalUri = Add-ServiceVersion($uri)
     $headers = Get-DefaultHeaders
 
     $result = Invoke-RestMethod -Uri $finalUri -Method Get -Headers $headers
@@ -35,7 +35,7 @@ function Get-Safe
     $OldEAP = $ErrorActionPreference
     $ErrorActionPreference = 'SilentlyContinue'
 
-    $finalUri = Append-ServiceVersion($uri)
+    $finalUri = Add-ServiceVersion($uri)
     $headers = Get-DefaultHeaders
 
     $result = Invoke-RestMethod -Uri $finalUri -Method Get -Headers $headers -ErrorVariable RestError
@@ -49,7 +49,7 @@ function Post
 {
     param ($uri, $body)
         
-    $finalUri = Append-ServiceVersion($uri)
+    $finalUri = Add-ServiceVersion($uri)
     $headers = Get-DefaultHeaders
 
     $result = $null
@@ -71,7 +71,7 @@ function Put
 {
     param ($uri, $body)
         
-    $finalUri = Append-ServiceVersion($uri)
+    $finalUri = Add-ServiceVersion($uri)
     $headers = Get-DefaultHeaders
 
     $json = ConvertTo-Json $body -Depth 100
@@ -85,7 +85,7 @@ function Delete
 {
     param ($uri)
         
-    $finalUri = Append-ServiceVersion($uri)
+    $finalUri = Add-ServiceVersion($uri)
     $headers = Get-DefaultHeaders
 
     $result = Invoke-RestMethod -Uri $finalUri -Method Delete -Headers $headers

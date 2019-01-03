@@ -14,7 +14,7 @@ function Get-Indexer
     return Get-Entity $baseUri $indexerName
 }
 
-function Create-Indexer
+function New-Indexer
 {
     param ($indexerDefinition)
 
@@ -22,7 +22,7 @@ function Create-Indexer
     Write-Host "Creating indexer $name..."
 
     $baseUri = Get-BaseUri
-    return Create-Entity $baseUri $indexerDefinition
+    return New-Entity $baseUri $indexerDefinition
 }
 
 function Update-Indexer
@@ -35,20 +35,20 @@ function Update-Indexer
     return Update-Entity $baseUri $indexerName $indexerDefinition
 }
 
-function Delete-Indexer
+function Remove-Indexer
 {
     param ($indexerName)
 
     Write-Host "Deleting indexer $indexerName..."
 
     $baseUri = Get-BaseUri
-    return Delete-Entity $baseUri $indexerName
+    return Remove-Entity $baseUri $indexerName
 }
 
-function List-Indexers
+function Show-Indexers
 {
     $baseUri = Get-BaseUri
-    return List-Entities $baseUri
+    return Show-Entities $baseUri
 }
 
 function Get-IndexerStatus
@@ -60,7 +60,7 @@ function Get-IndexerStatus
     return Get $uri
 }
 
-function Run-Indexer
+function Start-Indexer
 {
     param ($indexerName)
 
@@ -79,10 +79,10 @@ function Reset-Indexer
 }
 
 Export-ModuleMember -Function Get-Indexer
-Export-ModuleMember -Function Create-Indexer
+Export-ModuleMember -Function New-Indexer
 Export-ModuleMember -Function Update-Indexer
-Export-ModuleMember -Function Delete-Indexer
-Export-ModuleMember -Function List-Indexers
+Export-ModuleMember -Function Remove-Indexer
+Export-ModuleMember -Function Show-Indexers
 Export-ModuleMember -Function Get-IndexerStatus
-Export-ModuleMember -Function Run-Indexer
+Export-ModuleMember -Function Start-Indexer
 Export-ModuleMember -Function Reset-Indexer

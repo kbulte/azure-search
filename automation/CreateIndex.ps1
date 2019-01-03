@@ -22,7 +22,7 @@
  $index = Get-Index $definition.name
  if ($null -ne $index)
  {
-    Delete-Index $definition.name
+    Remove-Index $definition.name
  }
 
- Create-Index $definition
+ New-Index $definition

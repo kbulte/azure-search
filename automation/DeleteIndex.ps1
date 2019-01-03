@@ -17,9 +17,11 @@
  Set-Credentials $serviceName $serviceKey
 
  $index = Get-Index $indexName
- if ($index -ne $null)
+ 
+ if ($null -ne $index)
  {
-    Delete-Index $indexName
+    Remove-Index $indexName
+    Write-Host "Index $indexName has been deleted"
  }
  else
  {

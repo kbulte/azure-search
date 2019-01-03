@@ -14,7 +14,7 @@ function Get-Index
     return Get-Entity $baseUri $indexName
 }
 
-function Create-Index
+function New-Index
 {
     param ($indexDefinition)
 
@@ -22,7 +22,7 @@ function Create-Index
     Write-Host "Creating index $name..."
 
     $baseUri = Get-BaseUri
-    return Create-Entity $baseUri $indexDefinition
+    return New-Entity $baseUri $indexDefinition
 }
 
 function Update-Index
@@ -35,20 +35,20 @@ function Update-Index
     return Update-Entity $baseUri $indexName $indexDefinition
 }
 
-function Delete-Index
+function Remove-Index
 {
     param ($indexName)
 
     Write-Host "Deleting index $indexName..."
 
     $baseUri = Get-BaseUri
-    return Delete-Entity $baseUri $indexName
+    return Remove-Entity $baseUri $indexName
 }
 
-function List-Indexes
+function Show-Indexes
 {
     $baseUri = Get-BaseUri
-    return List-Entities $baseUri
+    return Show-Entities $baseUri
 }
 
 function Get-IndexStats
@@ -61,8 +61,8 @@ function Get-IndexStats
 }
 
 Export-ModuleMember -Function Get-Index
-Export-ModuleMember -Function Create-Index
+Export-ModuleMember -Function New-Index
 Export-ModuleMember -Function Update-Index
-Export-ModuleMember -Function Delete-Index
-Export-ModuleMember -Function List-Indexes
+Export-ModuleMember -Function Remove-Index
+Export-ModuleMember -Function Show-Indexes
 Export-ModuleMember -Function Get-IndexStats
